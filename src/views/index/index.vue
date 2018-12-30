@@ -1,6 +1,11 @@
 <template lang="html">
     <div class="index-page">
-        index
+        <div class="latest-article-wrap">
+
+        </div>
+        <div class="right-bar">
+
+        </div>
     </div>
 </template>
 
@@ -17,5 +22,8 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+    .index-page{
+
+    }
 </style>
