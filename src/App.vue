@@ -16,5 +16,7 @@
         width: 100%;
         height: 100%;
         font-family: '微软雅黑', '黑体', 'Arial', 'Verdana', '宋体b8b体', 'Lato', "Helvetica Neue", 'Helvetica', 'Arial', 'sans-serif';
+        background: #efefef;
+        overflow: auto;
     }
 </style>
