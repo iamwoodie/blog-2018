@@ -1,8 +1,8 @@
 <template lang="html">
     <div class="index-page">
         <div class="latest-article-wrap">
-            <ul class="latest-article-list" v-for="item in latestArticle" :key="item.s_id">
-                <li class="latest-article-item">
+            <ul class="latest-article-list">
+                <li class="latest-article-item" v-for="item in latestArticle" :key="item.s_id">
                     <h4 class="title-panel">
                         <span class="title">{{item.title}}</span>
                     </h4>
@@ -67,11 +67,12 @@ export default {
             padding: 15px;
 
             .latest-article-list{
+                padding-left: 0;
 
                 .latest-article-item{
                     margin-bottom: 20px;
                     border: 1px solid #e5e5e5;
-                    padding: 5px 20px 20px;
+                    padding: 5px 20px;
                     opacity: 0.7;
                     transition: opacity .5s;
                     border-radius: 3px;
