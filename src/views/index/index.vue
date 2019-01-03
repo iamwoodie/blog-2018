@@ -12,7 +12,7 @@
                         <span class="article-cate">[读书笔记]</span>
                     </p>
                     <p class="article-paragraph-panel" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">
-                        {{item.desc}}
+                        {{item.desc}}...
                     </p>
                     <p class="visitor-info-panel">
                         <span class="read-all" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">阅读全文</span>
@@ -132,6 +132,7 @@ export default {
                     .article-paragraph-panel{
                         word-break: break-all;
                         height: 63px;
+                        overflow: hidden;
                         text-indent: 2em;
                         cursor: pointer;
                     }
