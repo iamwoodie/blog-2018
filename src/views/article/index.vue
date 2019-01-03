@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style lang="less">
+    @import './markdown.css';
     .article-page{
         display: flex;
         justify-content: space-between;

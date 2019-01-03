@@ -8,17 +8,16 @@
                     </h4>
                     <p class="article-info-panel">
                         <span class="article-type">原创</span>
-                        <span class="article-update-time">更新时间：{{item.create_time | timeStampFilter}}</span>
+                        <span class="article-update-time">更新时间：{{item.update_time | timeStampFilter}}</span>
                         <span class="article-cate">[读书笔记]</span>
                     </p>
-                    <p class="article-paragraph-panel">
-                        这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，
-                        这是一段文字有前字，这是一段文字有前字，这是一段文字有前字，这是一段文字有前字...
+                    <p class="article-paragraph-panel" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">
+                        {{item.desc}}
                     </p>
                     <p class="visitor-info-panel">
                         <span class="read-all" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">阅读全文</span>
                         <span class="read-times">阅读({{item.click_times}})</span>
-                        <span class="comment-times">评论(0)</span>
+                        <span class="comment-times">评论({{item.comments_num}})</span>
                     </p>
                 </li>
             </ul>
@@ -131,8 +130,8 @@ export default {
                     }
 
                     .article-paragraph-panel{
-                        padding: 10px 0;
                         word-break: break-all;
+                        height: 63px;
                         text-indent: 2em;
                         cursor: pointer;
                     }
@@ -162,7 +161,6 @@ export default {
 
         .right-bar {
             width: 225px;
-            padding: 15px 0;
         }
     }
 </style>

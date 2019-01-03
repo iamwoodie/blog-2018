@@ -7,10 +7,10 @@
                     <span class="article-title">标题</span>
                     <span class="article-click-times">点击率</span>
                 </li>
-                <li class="article-item article-item-body" v-for="(item,index) in 5" :key="index">
-                    <span class="article-addtime">2018-12-29</span>
-                    <span class="article-title">这是一个标题而已，不要太在意</span>
-                    <span class="article-click-times">22</span>
+                <li class="article-item article-item-body" v-for="item in articleList" :key="item.s_id">
+                    <span class="article-addtime">{{item.create_time | timeStampFilter('{y}-{m}-{d}')}}</span>
+                    <span class="article-title" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">{{item.title}}</span>
+                    <span class="article-click-times">{{item.click_times}}</span>
                 </li>
             </ul>
         </div>
@@ -23,13 +23,36 @@
 
 <script>
 import vCard from '@/components/v_card/'
+import { getCateArticle } from '@/api/'
 export default {
     components: {
         vCard
     },
     data() {
         return{
-
+            cateType: '',
+            pageIndex: 1,
+            articleList: []
+        }
+    },
+    created() {
+        this.getCateArticle()
+    },
+    watch: {
+        '$route' (to, from) {
+            this.getCateArticle()
+        }
+    },
+    methods: {
+        getCateArticle() {
+            this.cateType = this.$route.params.category
+            const sendData = {
+                cateType: this.cateType,
+                pageIndex: this.pageIndex
+            }
+            getCateArticle(sendData).then(res => {
+                this.articleList = res.article_list;
+            })
         }
     }
 }

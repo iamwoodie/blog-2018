@@ -21,7 +21,7 @@
         </div>
         <div class="footer">
             <p>
-                <span>2018 © 博客后台管理系统 - Version: 1.0.0</span>
+                <span>2018 © 野客的个人博客 - Version: 1.0.0</span>
             </p>
         </div>
     </div>
@@ -57,11 +57,7 @@ export default {
                 {
                     name: '我的空间',
                     router: '/zone/article_list'
-                },
-                // {
-                //     name: '在线工具',
-                //     router: '/tools'
-                // }
+                }
             ]
         }
     },
@@ -136,7 +132,6 @@ export default {
             text-align: center;
             color: #8e8e93;
             font-size: 12px;
-            padding: 15px 0;
         }
     }
 </style>
