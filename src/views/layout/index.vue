@@ -124,7 +124,7 @@ export default {
         }
 
         .main{
-            min-height: 500px;
+            min-height: 620px;
         }
 
         .footer{

@@ -13,6 +13,7 @@
                     <span class="article-click-times">{{item.click_times}}</span>
                 </li>
             </ul>
+            <v-paginate :pageIndex="pageIndex" :total="total" @pageChange="pageChangeHandle"></v-paginate>
         </div>
         <div class="right-bar">
             <v-card></v-card>
@@ -24,14 +25,18 @@
 <script>
 import vCard from '@/components/v_card/'
 import { getCateArticle } from '@/api/'
+import vPaginate from '@/components/v_paginate'
+
 export default {
     components: {
-        vCard
+        vCard,
+        vPaginate
     },
     data() {
         return{
             cateType: '',
             pageIndex: 1,
+            total: 0,
             articleList: []
         }
     },
@@ -52,7 +57,12 @@ export default {
             }
             getCateArticle(sendData).then(res => {
                 this.articleList = res.article_list;
+                this.total = res.total;
             })
+        },
+        pageChangeHandle(data) {
+            this.pageIndex = data.pageIndex
+            this.getCateArticle()
         }
     }
 }
@@ -102,6 +112,11 @@ export default {
                         text-align: center;
                     }
                 }
+            }
+
+            .v-paginate{
+                margin-left: 50%;
+                transform: translateX(-50%);
             }
         }
 

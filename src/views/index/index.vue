@@ -12,7 +12,7 @@
                         <span class="article-cate">[读书笔记]</span>
                     </p>
                     <p class="article-paragraph-panel" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">
-                        {{item.desc}}...
+                        {{item.desc | autoAddEllipsis(220)}}
                     </p>
                     <p class="visitor-info-panel">
                         <span class="read-all" @click="$router.push({path: '/article', query: {articleID: item.s_id}})">阅读全文</span>

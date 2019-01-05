@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="article-page">
         <div class="article-content-wrap">
-            <div class="article-content markdown" v-html="article.content">
+            <div class="article-content markdown" v-html="article.content_html">
 
             </div>
         </div>
