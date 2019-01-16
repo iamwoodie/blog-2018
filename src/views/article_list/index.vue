@@ -78,6 +78,7 @@ export default {
             padding: 15px;
 
             .article-list{
+                min-height: 536px;
 
                 .article-item{
                     padding: 12px 0;
